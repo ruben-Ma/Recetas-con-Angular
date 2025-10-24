@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-recetas',
   imports: [],
   templateUrl: './recetas.html',
-  styleUrl: './recetas.scss',
+  styleUrl: './recetas.scss'
 })
 export class Recetas {
 

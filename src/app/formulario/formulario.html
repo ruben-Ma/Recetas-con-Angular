@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<form class="mt-2 mx-auto" style="max-width: 700px;">
+<header class="text-center col-mt-4"><h2 class="text-center fw-bold text-dark display-5" style="margin-bottom: 50px;">Agregar nueva receta</h2></header>
+
+  <div class="col-md-12 position-relative">
+    
+    <input type="text" class="form-control" id="validationTooltip01" placeholder="Nueva Receta" required="">
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-12 position-relative">
+   
+    <input type="text" class="form-control" id="validationTooltip02" placeholder="Primer ingrediente" required="">
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-12 position-relative">
+   <input type="text" class="form-control" id="validationTooltip02" placeholder="Segundo ingrediente" required="">
+    <div class="valid-tooltip">
+    </div>
+  </div>
+  
+  
+  <div class="mb-3">
+    <textarea class="form-control" id="descripcionReceta" rows="4" placeholder="Escribe aquí los pasos o detalles..." required></textarea>
+  </div>
+
+
+  
+  <div class="col-md-12 position-relative">
+  <input type="text" class="form-control" id="validationTooltip05" placeholder="Pega aquí la URL de una imagen" required>
+  
+  
+  <div class="mt-3 text-center">
+    <img id="previewImage" src="" alt="Vista previa" class="img-fluid rounded shadow" style="display:none; max-height: 200px;">
+  </div>
+</div>
+
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Publicar receta</button>
+  </div>
+</form>

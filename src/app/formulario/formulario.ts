@@ -37,10 +37,10 @@ export class Formulario {
       ingredientes: this.ingredientes.split(',').map(ing => ing.trim())
     };
 
-    // Acceder a la variable estática de Recetas y agregar la nueva receta
+    // llama a la nueva receta
     Recetas.recetasEnMemoria.push(nuevaReceta);
 
-    // Limpiar formulario
+    // limpiar
     this.nombre = '';
     this.ingredientes = '';
     this.imagen = '';

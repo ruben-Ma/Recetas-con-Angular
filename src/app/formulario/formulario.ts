@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Navbar } from '../navbar/navbar';
 import { Recetas } from '../recetas/recetas';
+import { Footer } from "../footer/footer";
 
 @Component({
   selector: 'app-formulario',
-  imports: [Navbar, CommonModule, FormsModule],
+  imports: [Navbar, CommonModule, FormsModule, Footer],
   templateUrl: './formulario.html',
   styleUrl: './formulario.scss',
 })

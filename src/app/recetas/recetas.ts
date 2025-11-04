@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Navbar } from '../navbar/navbar';
 import { Receta } from "../receta/receta";
+import { Footer } from "../footer/footer";
 
 @Component({
   selector: 'app-recetas',
-  imports: [CommonModule, Navbar, Receta],
+  imports: [CommonModule, Navbar, Receta, Footer],
   templateUrl: './recetas.html',
   styleUrl: './recetas.scss'
 })
 export class Recetas implements OnInit {
-  // Array original de recetas (no se modifica)
+  // original de recetas no se modfica
   private static readonly recetasOriginales = [
     {
       id: 1,
@@ -37,6 +38,13 @@ export class Recetas implements OnInit {
       ingredientes: ['Arroz', 'Mariscos', 'Azafrán', 'Pimientos', 'Guisantes']
     }
   ];
+
+
+  /*
+    Obviamenete esto no le he buscado ya que tenia el problema de que al eliminar o crear una receta y volver a la vista de recetas
+    se perdian los cambios ya que se recargaba el array original. He creado una variable static que conserva los cambios realizados
+    en la sesion actual. No se si es la mejor forma de hacerlo pero funciona correctamente. 
+  */
 
   static recetasEnMemoria: any[] = [];//variabe static para que se conserven las eliminaciones y nuevas recetasº
 

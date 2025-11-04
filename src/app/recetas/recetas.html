@@ -2,13 +2,16 @@
 <app-navbar></app-navbar>
 
 <div class="container text-center mt-4">
-    <header class="text-center mt-4"><h2 class="text-center fw-bold text-dark display-5" style="margin-bottom: 50px;">Mis Recetas</h2></header>
-
-<app-receta></app-receta>
-
+    <header class="text-center mt-4"><h2 class="text-center fw-bold text-dark display-5" style="margin-bottom: 50px;">Mis Recetas ({{ recetas.length }})</h2></header>
     
-
-    
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3" *ngFor="let receta of recetas">
+            <app-receta 
+                [receta]="receta" 
+                (recetaEliminada)="eliminarReceta($event)">
+            </app-receta>
+        </div>
+    </div>
 </div>
 
 

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BtnEli } from '../btn-eli/btn-eli';
 
@@ -9,16 +9,16 @@ import { BtnEli } from '../btn-eli/btn-eli';
   styleUrl: './receta.scss',
 })
 export class Receta {
-  @Input() receta: any = {
+  receta = input({
     id: 0,
     nombre: 'Receta por defecto',
     imagen: 'https://via.placeholder.com/200x200',
     ingredientes: ['Ingrediente 1', 'Ingrediente 2']
-  };
+  });
 
-  @Output() recetaEliminada = new EventEmitter<number>();
+  recetaEliminada = output<number>();
 
   eliminarReceta() { // metodo que se ejecuta al eliminar la receta
-    this.recetaEliminada.emit(this.receta.id);
+    this.recetaEliminada.emit(this.receta().id);
   }
 }

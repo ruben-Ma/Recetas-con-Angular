@@ -1,16 +1,16 @@
 <!--estructura de receta -->
 <div class="card mb-4">
   <div class="card-header d-flex justify-content-between align-items-center">
-    <h4 class="card-title mb-0">{{ receta.nombre }}</h4>
-    <app-btn-eli [recetaNombre]="receta.nombre" (eliminar)="eliminarReceta()"></app-btn-eli><!-- llama al componente con el evento eliminar -->
+    <h4 class="card-title mb-0">{{ receta().nombre }}</h4>
+    <app-btn-eli [recetaNombre]="receta().nombre" (eliminar)="eliminarReceta()"></app-btn-eli><!-- llama al componente con el evento eliminar -->
   </div>
   <div class="card-body">
     <ul class="list-group">
-      <img [src]="receta.imagen" 
+      <img [src]="receta().imagen" 
            class="img-fluid" 
-           [alt]="'imagen ' + receta.nombre"
+           [alt]="'imagen ' + receta().nombre"
            style="height: 200px; width: 100%; object-fit: cover;">
-      <li class="list-group-item" *ngFor="let ingrediente of receta.ingredientes">
+      <li class="list-group-item" *ngFor="let ingrediente of receta().ingredientes">
         {{ ingrediente }}
       </li>
     </ul>

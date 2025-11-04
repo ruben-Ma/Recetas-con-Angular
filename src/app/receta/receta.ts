@@ -18,7 +18,7 @@ export class Receta {
 
   @Output() recetaEliminada = new EventEmitter<number>();
 
-  eliminarReceta() {
+  eliminarReceta() { // metodo que se ejecuta al eliminar la receta
     this.recetaEliminada.emit(this.receta.id);
   }
 }

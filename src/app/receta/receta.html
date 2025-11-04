@@ -1,8 +1,8 @@
-
+<!--estructura de receta -->
 <div class="card mb-4">
   <div class="card-header d-flex justify-content-between align-items-center">
     <h4 class="card-title mb-0">{{ receta.nombre }}</h4>
-    <app-btn-eli [recetaNombre]="receta.nombre" (eliminar)="eliminarReceta()"></app-btn-eli>
+    <app-btn-eli [recetaNombre]="receta.nombre" (eliminar)="eliminarReceta()"></app-btn-eli><!-- llama al componente con el evento eliminar -->
   </div>
   <div class="card-body">
     <ul class="list-group">

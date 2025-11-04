@@ -38,18 +38,16 @@ export class Recetas implements OnInit {
     }
   ];
 
-  // Variable estática que conserva los cambios entre navegaciones
-  static recetasEnMemoria: any[] = [];
+  static recetasEnMemoria: any[] = [];//variabe static para que se conserven las eliminaciones y nuevas recetasº
 
   recetas: any[] = [];
 
   ngOnInit() {
-    // Si es la primera carga, inicializa desde recetasOriginales
+    // la primera carga coge las recetas originales
     if (Recetas.recetasEnMemoria.length === 0) {
       Recetas.recetasEnMemoria = [...Recetas.recetasOriginales];
     }
-    // Carga desde la memoria estática (conserva las eliminaciones)
-    this.recetas = Recetas.recetasEnMemoria;
+    this.recetas = Recetas.recetasEnMemoria;// carga las modificaciones realizadas
   }
 
   eliminarReceta(id: number) {

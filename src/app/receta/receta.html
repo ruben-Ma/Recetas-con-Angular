@@ -1,7 +1,7 @@
 <!--estructura de receta -->
-<div class="card mb-4">
-  <div class="card-header d-flex justify-content-between align-items-center">
-    <h4 class="card-title mb-0">{{ receta().nombre }}</h4>
+<div class="card mb-4  shadow-lg border-0 card-title mb-0 fw-bold">
+  <div class="card-header d-flex justify-content-between align-items-center bg-danger text-white">
+    <h4 class="card-title mb-0 ">{{ receta().nombre }}</h4>
     <app-btn-eli [recetaNombre]="receta().nombre" (eliminar)="eliminarReceta()"></app-btn-eli><!-- llama al componente con el evento eliminar -->
   </div>
   <div class="card-body">

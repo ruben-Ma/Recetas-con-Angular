@@ -1,29 +1,80 @@
 <app-navbar></app-navbar> <!-- llamo al navbar-->
 
-<form class="mt-2 mx-auto" style="max-width: 700px;" (ngSubmit)="crearReceta()">
-<header class="text-center col-mt-4"><h2 class="text-center fw-bold text-dark display-5" style="margin-bottom: 50px;">Agregar nueva receta</h2></header>
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-danger text-white">
+          <h2 class="card-title mb-0 fw-bold">
+            <i class="bi bi-plus-circle"></i> Agregar Nueva Receta
+          </h2>
+        </div>
+        
+        <div class="card-body p-5">
+          <form (ngSubmit)="crearReceta()">
+            
+            <!-- Campo Nombre de la Receta -->
+            <div class="mb-4">
+              <label for="nombre" class="form-label fw-bold">Nombre de la Receta</label>
+              <input 
+                type="text" 
+                class="form-control form-control-lg" 
+                id="nombre" 
+                placeholder="Ej: Pasta Carbonara"
+                [(ngModel)]="nombre" 
+                name="nombre" 
+                required>
+              <small class="form-text text-muted">Ingresa el nombre de tu receta</small>
+            </div>
 
-  <div class="col-md-12 position-relative mb-4">
-    
-    <input type="text" class="form-control" id="validationTooltip01" placeholder="Nueva Receta" [(ngModel)]="nombre" name="nombre" required="">
-    <div class="valid-tooltip">
-      
+            <!-- Campo Ingredientes -->
+            <div class="mb-4">
+              <label for="ingredientes" class="form-label fw-bold">Ingredientes</label>
+              <textarea 
+                class="form-control form-control-lg" 
+                id="ingredientes" 
+                rows="4" 
+                placeholder="Ej: Pasta, Huevo, Queso parmesano, Tocino (separados por comas)"
+                [(ngModel)]="ingredientes" 
+                name="ingredientes" 
+                required></textarea>
+              <small class="form-text text-muted">Separa los ingredientes con comas</small>
+            </div>
+
+            <!-- Campo URL de Imagen -->
+            <div class="mb-4">
+              <label for="imagen" class="form-label fw-bold">URL de la Imagen</label>
+              <input 
+                type="url" 
+                class="form-control form-control-lg" 
+                id="imagen" 
+                placeholder="Ej: https://ejemplo.com/imagen.jpg"
+                [(ngModel)]="imagen" 
+                name="imagen" 
+                (change)="onImageChange($event)" 
+                required>
+              <small class="form-text text-muted">Pega aquí el enlace de la imagen</small>
+            </div>
+
+            
+
+            <!-- Botones de Acción -->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button 
+                class="btn btn-secondary btn-lg" 
+                type="reset">
+                <i class="bi bi-arrow-counterclockwise"></i> Limpiar
+              </button>
+              <button 
+                class="btn btn-danger btn-lg" 
+                type="submit">
+                <i class="bi bi-check-circle"></i> Publicar Receta
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="mb-4 mt-4">
-    <textarea class="form-control" id="descripcionReceta" rows="4" placeholder="Ingredientes separados por comas" [(ngModel)]="ingredientes" name="ingredientes" required></textarea> 
-  </div>
-
-  <div class="col-md-12 position-relative">
-  <input type="text" class="form-control" id="validationTooltip05" placeholder="Pega aquí la URL de una imagen" [(ngModel)]="imagen" name="imagen" (change)="onImageChange($event)" required>
-  
-  <div class="mt-3 text-center">
-    <img id="previewImage" [src]="previewImage" alt="Vista previa" class="img-fluid rounded shadow" [style.display]="previewImage ? 'block' : 'none'" style="max-height: 200px;">
-  </div>
 </div>
-
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Publicar receta</button>
-  </div>
-</form>

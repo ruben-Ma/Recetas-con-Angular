@@ -39,7 +39,7 @@ export class Recetas implements OnInit {
   ];
 
   // Variable estática que conserva los cambios entre navegaciones
-  private static recetasEnMemoria: any[] = [];
+  static recetasEnMemoria: any[] = [];
 
   recetas: any[] = [];
 

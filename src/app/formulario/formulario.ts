@@ -17,7 +17,7 @@ export class Formulario {
   previewImage: string = '';
 
   onImageChange(event: any) {
-    const input = event.target as HTMLInputElement;
+    const input = event.target;
     this.imagen = input.value;
     this.previewImage = this.imagen;
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Navbar } from '../navbar/navbar';
 import { Receta } from "../receta/receta";
@@ -9,9 +9,9 @@ import { Receta } from "../receta/receta";
   templateUrl: './recetas.html',
   styleUrl: './recetas.scss'
 })
-export class Recetas {
-  // Array de recetas completas
-  recetas = [
+export class Recetas implements OnInit {
+  // Array original de recetas (no se modifica)
+  private static readonly recetasOriginales = [
     {
       id: 1,
       nombre: 'Pasta Italiana',
@@ -38,7 +38,23 @@ export class Recetas {
     }
   ];
 
+  // Variable estática que conserva los cambios entre navegaciones
+  private static recetasEnMemoria: any[] = [];
+
+  recetas: any[] = [];
+
+  ngOnInit() {
+    // Si es la primera carga, inicializa desde recetasOriginales
+    if (Recetas.recetasEnMemoria.length === 0) {
+      Recetas.recetasEnMemoria = [...Recetas.recetasOriginales];
+    }
+    // Carga desde la memoria estática (conserva las eliminaciones)
+    this.recetas = Recetas.recetasEnMemoria;
+  }
+
   eliminarReceta(id: number) {
     this.recetas = this.recetas.filter(receta => receta.id !== id);
+    // Actualiza también la variable estática para que persista el cambio
+    Recetas.recetasEnMemoria = this.recetas;
   }
 }

@@ -6,7 +6,7 @@ import { Footer } from "../footer/footer";
 
 @Component({
   selector: 'app-recetas',
-  imports: [CommonModule, Navbar, Receta, Footer],
+  imports: [CommonModule, Navbar, Receta],
   templateUrl: './recetas.html',
   styleUrl: './recetas.scss'
 })
@@ -35,7 +35,7 @@ export class Recetas implements OnInit {
       id: 4,
       nombre: 'Paella Española',
       imagen: 'https://gourmetsabor.es/wp-content/uploads/2025/03/close-up-delicious-spanish-food-scaled-1.jpg',
-      ingredientes: ['Arroz', 'Mariscos', 'Azafrán', 'Pimientos', 'Guisantes']
+      ingredientes: ['Arroz', 'Mariscos', 'Azafrán', 'Pimientos']
     }
   ];
 

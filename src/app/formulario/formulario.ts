@@ -7,7 +7,7 @@ import { Footer } from "../footer/footer";
 
 @Component({
   selector: 'app-formulario',
-  imports: [Navbar, CommonModule, FormsModule, Footer],
+  imports: [Navbar, CommonModule, FormsModule],
   templateUrl: './formulario.html',
   styleUrl: './formulario.scss',
 })

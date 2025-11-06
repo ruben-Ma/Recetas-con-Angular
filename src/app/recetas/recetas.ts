@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Navbar } from '../navbar/navbar';
 import { Receta } from "../receta/receta";
-import { Footer } from "../footer/footer";
+
 
 @Component({
   selector: 'app-recetas',

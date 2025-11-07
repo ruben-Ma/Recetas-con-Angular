@@ -1,59 +1,57 @@
-# RecetasConAngular
+# Recetas con Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+Este proyecto es una aplicación web de página única (SPA) desarrollada con Angular que permite gestionar un recetario de cocina sencillo. Los usuarios pueden ver una lista de recetas predefinidas, añadir nuevas recetas a través de un formulario y eliminar las existentes.
 
-## Development server
+> **Nota:** La aplicación utiliza persistencia en memoria durante la sesión activa. Si se recarga la página completa (F5), los cambios se perderán y volverán a aparecer las recetas originales.
 
-To start a local development server, run:
+## Características
 
-```bash
-ng serve
-```
+* **Listado de Recetas**: Visualización de todas las recetas disponibles en tarjetas con su imagen e ingredientes.
+* **Añadir Receta**: Formulario dedicado para crear nuevas recetas indicando nombre, ingredientes (separados por comas) y URL de una imagen.
+* **Eliminar Receta**: Posibilidad de borrar recetas individuales con un cuadro de confirmación de seguridad.
+* **Navegación Fluida**: Uso de Angular Router para navegar entre el listado (`/recetas`) y el formulario (`/formulario`) sin recargar la página.
+* **Diseño Responsivo**: Interfaz adaptada a diferentes dispositivos utilizando Bootstrap 5.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Tecnologías Utilizadas
 
-## Code scaffolding
+* **Angular** (v20.3.5)
+* **TypeScript**
+* **Bootstrap 5** (para estilos y rejilla responsive)
+* **SCSS** (Sass para estilos personalizados)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Estructura del Proyecto
 
-```bash
-ng generate component component-name
-```
+Los componentes principales de la aplicación son:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+* **`Recetas`** (`src/app/recetas`): Componente principal que muestra la rejilla de recetas. Gestiona el estado de las recetas en memoria usando una variable estática para mantener los cambios mientras se navega por la aplicación.
+* **`Formulario`** (`src/app/formulario`): Vista encargada de la creación de nuevas recetas. Procesa la entrada de ingredientes separándolos por comas.
+* **`Receta`** (`src/app/receta`): Componente de presentación que renderiza una tarjeta individual con la información de una receta.
+* **`BtnEli`** (`src/app/btn-eli`): Botón reutilizable encargado de emitir la acción de eliminar, incluyendo una confirmación nativa del navegador antes de ejecutar la acción.
+* **`Navbar`** y **`Footer`**: Componentes estructurales para la navegación y el pie de página.
 
-```bash
-ng generate --help
-```
+## Instalación y Despliegue Local
 
-## Building
+Para ejecutar este proyecto en tu máquina local, necesitas tener instalado [Node.js](https://nodejs.org/) y [Angular CLI](https://github.com/angular/angular-cli).
 
-To build the project run:
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone <url-de-tu-repositorio>
+    cd recetas-con-angular
+    ```
 
-```bash
-ng build
-```
+2.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+3.  **Ejecutar el servidor de desarrollo:**
+    ```bash
+    ng serve
+    ```
 
-## Running unit tests
+4.  **Abrir la aplicación:**
+    Navega a `http://localhost:4200/` en tu navegador web. La aplicación se recargará automáticamente si cambias alguno de los archivos fuente.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Autor
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Desarrollado por Rubén Marañón.
